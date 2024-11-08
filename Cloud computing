@@ -1,0 +1,23 @@
+Sub CreateCloudComputingPresentation()
+    ' Declare variables for PowerPoint objects
+    Dim pptApp As Object
+    Dim pptPresentation As Object
+    Dim slide As Object
+    Dim slideIndex As Integer
+
+    ' Initialize PowerPoint application
+    Set pptApp = CreateObject("PowerPoint.Application")
+    pptApp.Visible = True
+    
+    ' Create a new presentation
+    Set pptPresentation = pptApp.Presentations.Add
+
+    ' Slide 1 - Title Slide with Details
+    slideIndex = slideIndex + 1
+    Set slide = pptPresentation.Slides.Add(slideIndex, 1)
+    slide.Shapes.Title.TextFrame.TextRange.Text = "Cloud Computing"
+    slide.Shapes.Placeholders(2).TextFrame.TextRange.Text = _
+        "An Introduction to the Future of Technology" & vbCrLf & _
+        "Member Name: Vikashini.A" & vbCrLf & _
+        "Phone Number: 9363227766" & vbCrLf & _
+        "College Name: SRM TRP Engineering College" & vbCrLf
